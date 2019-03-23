@@ -1,19 +1,59 @@
 
-import React from 'react'
-import { StyleSheet, View, Button } from 'react-native'
+import React, { PureComponent } from 'react'
+import { StyleSheet, View, Button, TextInput } from 'react-native'
 import { Constants } from 'expo'
 import PropTypes from 'prop-types'
 
-const Comment = ({
-  onNext
-}) => (
-  <View style={styles.container}>
-    <Button
-      onPress={onNext}
-      title="submit"
-    />
-  </View>
-)
+class Comment extends PureComponent {
+  state = {
+    comment: ''
+  }
+
+  _handleCommentChange = (comment) => {
+    this.setState({
+      comment,
+    })
+  }
+
+
+  _handlePressNext = () => {
+    const {
+      onNext,
+    } = this.props
+
+    const {
+      comment,
+    } = this.state
+    
+    onNext(comment)
+  }
+
+  render() {
+    const {
+      onNext,
+    } = this.props
+
+    const {
+      comment,
+    } = this.state
+
+    return (
+      <View style={styles.container}>
+        <TextInput
+          multiline={true}
+          numberOfLines={4}
+          onChangeText={this._handleCommentChange}
+          value={comment}
+          placeholder="Type your optional note here ..."
+        />
+        <Button
+          onPress={this._handlePressNext}
+          title="submit"
+        />
+      </View>
+    )
+  }
+}
 
 Comment.defaultProps = {
 }

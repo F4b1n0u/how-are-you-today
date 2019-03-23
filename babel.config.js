@@ -27,6 +27,7 @@ module.exports = (api) => {
             '#utils': './src/utils',
             '#screens': './src/screens',
             '#navigators': './src/navigators',
+            '#env': './.env.js',
           },
         },
       ]

@@ -7,7 +7,7 @@ const MoodSelectionScreen = ({
   navigation,
 }) => (
   <MoodSelection
-    onNext={() => navigation.navigate('feelingSelection')}
+    onNext={params => navigation.navigate('feelingSelection', params)}
   />
 )
 

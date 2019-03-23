@@ -5,7 +5,7 @@ import Comment from '#components/check-in/comment'
 
 const CommentScreen = ({ navigation }) => (
   <Comment
-    onNext={() => navigation.navigate('result')}
+    onNext={params => navigation.navigate('result', params)}
   />
 )
 

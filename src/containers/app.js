@@ -3,12 +3,18 @@ import { connect } from 'react-redux'
 import {
   startLoad,
   endLoad,
+
+  isLoaded,
+  isLoading,
 } from '#modules/app'
 
 import {
-  isLoaded,
-  isLoading,
-} from '#selectors/app'
+  fetch as fetchFeelings,
+} from '#modules/feelings'
+
+import {
+  fetch as fetchCheckins,
+} from '#modules/check-ins'
 
 import App from '#components/app'
 
@@ -17,12 +23,12 @@ const mapStateToProps = state => ({
   isLoaded: isLoaded(state),
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, getState) => ({
   startLoading: () => {
     dispatch(startLoad())
-    setTimeout(() => {
-      dispatch(endLoad())
-    }, 1000)
+    dispatch(fetchCheckins())
+    dispatch(fetchFeelings())
+    dispatch(endLoad())
   },
 })
 
