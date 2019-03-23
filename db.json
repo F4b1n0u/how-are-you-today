@@ -1,0 +1,16 @@
+{
+  "feelings": [
+    "depressed",
+    "optimistic",
+    "bored",
+    "happy"
+  ],
+  "check-ins"  : [{
+    "timestamp": 1553344663203,
+    "mood": 5,
+    "feelings": [
+      "depressed",
+      "optimistic"
+    ]
+  }]
+}
