@@ -43,10 +43,8 @@ class Insight extends PureComponent {
       0
     ) / checkIns.length
 
-    const averageMoodRatio = checkIns.reduce(
-      (acc, { mood }) => acc + (mood >= averageMood) ? 1 : 0,
-      0
-    ) / checkIns.length
+    const averageMoodRatio = checkIns
+      .filter(({ mood }) => mood >= averageMood).length / checkIns.length
 
     const checkInAverage = hasCheckIns && (
       <AverageWrapper>
@@ -177,7 +175,6 @@ const Reference = styled.Text`
 `
 
 const CheckIns = styled.FlatList.attrs(() => ({
-  showsVerticalScrollIndicator: false,
   ItemSeparatorComponent: styled.View`height: 10;`,
 }))`
   flex: 1;

@@ -5,45 +5,5 @@
     "bored",
     "happy"
   ],
-  "check-ins": [
-    {
-      "id": 1553462985556,
-      "timestamp": 1553462985556,
-      "mood": 5,
-      "feelings": [
-        "bored"
-      ],
-      "comment": ""
-    },
-    {
-      "id": 1553463144216,
-      "timestamp": 1553463144216,
-      "mood": 5,
-      "feelings": [
-        "happy",
-        "bored",
-        "optimistic",
-        "depressed"
-      ],
-      "comment": ""
-    },
-    {
-      "id": 1553463595578,
-      "timestamp": 1553463595578,
-      "mood": 5,
-      "feelings": [
-        "optimistic"
-      ],
-      "comment": "Fbvhh"
-    },
-    {
-      "id": 1553463699138,
-      "timestamp": 1553463699138,
-      "mood": 5,
-      "feelings": [
-        "bored"
-      ],
-      "comment": "Asdhfjgasdlkjfgh \n\nAs\nFast\nF\nAds\nF\n\n\n\n\n\n"
-    }
-  ]
+  "check-ins": []
 }

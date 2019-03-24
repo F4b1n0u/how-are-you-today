@@ -36,7 +36,7 @@ class Result extends PureComponent {
 
         {(!isSavingCheckIn && !savingCheckInError) && (
           <Outcome>
-            {'done !!!'}
+            {'Saved !'}
           </Outcome>
         )}
         
@@ -82,7 +82,7 @@ const StyledActivityIndicator = styled(ActivityIndicator).attrs(({ theme: { high
 `
 
 const Outcome = styled.Text`
-  font-size: 100;
+  font-size: 50;
   color: ${({ theme: { highlight } }) => highlight};
 `
 
