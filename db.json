@@ -5,5 +5,24 @@
     "bored",
     "happy"
   ],
-  "check-ins": []
+  "check-ins": [
+    {
+      "id": 1553465526071,
+      "timestamp": 1553465526071,
+      "mood": 1,
+      "feelings": [
+        "happy"
+      ],
+      "comment": "Plop"
+    },
+    {
+      "id": 1553465549337,
+      "timestamp": 1553465549337,
+      "mood": 7,
+      "feelings": [
+        "bored"
+      ],
+      "comment": ""
+    }
+  ]
 }

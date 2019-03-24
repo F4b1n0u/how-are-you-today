@@ -28,10 +28,12 @@ class App extends React.Component {
 }
 
 App.defaultProps = {
+  isLoaded: false,
 }
 
 App.propTypes = {
-  isLoaded: PropTypes.bool.isRequired,
+  startLoading: PropTypes.func.isRequired,
+  isLoaded: PropTypes.bool,
 }
 
 export default App 

@@ -62,7 +62,7 @@ const Container = styled.SafeAreaView`
   flex: 1;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: ${({ theme: { background } }) => background};
   padding-horizontal: 20;
   padding-vertical: 20;

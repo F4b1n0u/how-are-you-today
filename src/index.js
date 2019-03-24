@@ -1,7 +1,7 @@
 import React from 'react'
 import { registerRootComponent } from 'expo'
 import { Provider } from 'react-redux'
-import styled, { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components/native'
 import { StatusBar } from 'react-native'
 
 
