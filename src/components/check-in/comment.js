@@ -31,7 +31,7 @@ class Comment extends PureComponent {
 
   render() {
     const {
-      onNext,
+      style,
     } = this.props
 
     const {
@@ -39,10 +39,8 @@ class Comment extends PureComponent {
     } = this.state
 
     return (
-      <Container>
-        <TextInput
-          multiline={true}
-          numberOfLines={4}
+      <Container style={style}>
+        <CommentInput
           onChangeText={this._handleCommentChange}
           value={comment}
           placeholder="Type your optional note here ..."
@@ -69,6 +67,17 @@ const Container = styled.SafeAreaView`
   align-items: center;
   justify-content: flex-start;
   background-color: ${({ theme: { background } }) => background};
+`
+
+const CommentInput = styled.TextInput.attrs(() => ({
+  multiline: true,
+  numberOfLines: 4,
+}))`
+  width: 90%;
+  height: 30%;
+  background-color: ${({ theme: { box } }) => box};
+  margin-top: 20;
+  margin-bottom: 20;
 `
 
 export default Comment

@@ -1,7 +1,6 @@
 
 import React , { PureComponent } from 'react'
-import { Button, Text } from 'react-native'
-import { Constants } from 'expo'
+import { Button } from 'react-native'
 import PropTypes from 'prop-types'
 import Slider from 'react-native-slider'
 import styled from 'styled-components/native'
@@ -27,15 +26,16 @@ class MoodSelection extends PureComponent {
 
   render() {
     const {
+      style,
       mood,
     } = this.state
 
     return (
-      <Container>
+      <Container style={style}>
         <Mood>
           {mood}
         </Mood>
-        <Slider
+        <StyledSlider
           minimumValue={1}
           maximumValue={7}
           step={1}
@@ -45,7 +45,7 @@ class MoodSelection extends PureComponent {
         <Button
           onPress={this._handlePressNext}
           title="Next"
-        /> 
+        />
       </Container>
     )
   }
@@ -64,11 +64,18 @@ const Container = styled.SafeAreaView`
   align-items: center;
   justify-content: flex-start;
   background-color: ${({ theme: { background } }) => background};
+  padding-horizontal: 20;
+  padding-vertical: 20;
 `
 
 const Mood = styled.Text`
   font-family: moods;
   font-size: 200;
+  color: ${({ theme: { highlight } }) => highlight};
+`
+
+const StyledSlider = styled(Slider)`
+  width: 80%;
 `
 
 export default MoodSelection

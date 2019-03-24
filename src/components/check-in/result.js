@@ -1,6 +1,6 @@
 
 import React, { PureComponent } from 'react'
-import { Button, Text } from 'react-native'
+import { Button, Text, ActivityIndicator } from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 
@@ -20,23 +20,25 @@ class Result extends PureComponent {
 
   render() {
     const {
-      onBackHome,
-      onInsight,
+      style,
       isSavingCheckIn,
       savingCheckInError,
-      saveCheckIn,
     } = this.props
 
     return (
-      <Container>
-        <Text>
-          {isSavingCheckIn && (
-            'saving...'
-          )}
-        </Text>
-        <Text>
-          {(!isSavingCheckIn && !savingCheckInError) && 'done !!!'}
-        </Text>
+      <Container style={style}>
+        {isSavingCheckIn && (
+          <StyledActivityIndicator
+            size="large"
+            color="#19A5B0"
+          />
+        )}
+
+        {(!isSavingCheckIn && !savingCheckInError) && (
+          <Outcome>
+            {'done !!!'}
+          </Outcome>
+        )}
         
         {(!isSavingCheckIn && savingCheckInError) && (
           <Button
@@ -67,8 +69,22 @@ const Container = styled.SafeAreaView`
   flex: 1;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: ${({ theme: { background } }) => background};
+  padding-horizontal: 20;
+  padding-vertical: 20;
 `
+
+const StyledActivityIndicator = styled(ActivityIndicator).attrs(({ theme: { highlight } }) => ({
+  color: highlight,
+  size: 'large',
+}))`
+`
+
+const Outcome = styled.Text`
+  font-size: 100;
+  color: ${({ theme: { highlight } }) => highlight};
+`
+
 
 export default Result

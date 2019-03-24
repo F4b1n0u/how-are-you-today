@@ -10,14 +10,20 @@ const Home = ({
   onGoToCheckIn,
 }) => (
   <Container style={style}>
-    <Button
+    <StyledButton
       onPress={onGoToCheckIn}
-      title="Check In"
-    />
-    <Button
+    >
+      <Label>
+        {'Check In'}
+      </Label>
+    </StyledButton>
+    <StyledButton
       onPress={onGoToInsight}
-      title="Insight"
-    />
+    >
+      <Label>
+        {'Insight'}
+      </Label>
+    </StyledButton>
   </Container>
 )
 
@@ -33,8 +39,25 @@ const Container = styled.SafeAreaView`
   flex: 1;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-around;
   background-color: ${({ theme: { background } }) => background};
+`
+
+const StyledButton = styled.TouchableOpacity.attrs(() => ({
+  activeOpacity: .8,
+}))`
+  height: 30%;
+  width: 70%;
+  background-color: ${({ theme: { box } }) => box};
+
+  justify-content: center;
+  align-items: center;
+  border-radius: 10;
+`
+
+const Label = styled.Text`
+  font-size: 50;
+  color: ${({ theme: { highlight } }) => highlight};
 `
 
 export default Home

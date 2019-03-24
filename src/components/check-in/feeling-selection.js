@@ -1,28 +1,11 @@
 
 import React, { PureComponent } from 'react'
-import { Button, FlatList, Text, TouchableHighlight } from 'react-native'
-import { Constants } from 'expo'
+import { Button, TouchableHighlight } from 'react-native'
 import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 import { isEmpty } from 'lodash'
 
-const Feeling = ({
-  label,
-  isSelected,
-}) => {
-  return (
-    <Text>{label} {isSelected ? 'x' : ''}</Text>
-  )
-}
-
-Feeling.defaultProps = {
-  isSelected: false,
-}
-
-Feeling.propTypes = {
-  label: PropTypes.string.isRequired,
-  isSelected: PropTypes.bool,
-}
+import Feeling from '#components/check-in/feeling'
 
 class FeelingsSelection extends PureComponent {
   constructor(props) {
@@ -62,6 +45,7 @@ class FeelingsSelection extends PureComponent {
 
   render() {
     const {
+      style,
       feelings: allFeelings,
     } = this.props
 
@@ -78,20 +62,20 @@ class FeelingsSelection extends PureComponent {
     const canGoNext = !isEmpty(feelings)
 
     return (
-      <Container>
-        <FlatList
+      <Container style={style}>
+        <FeelingList
           data={data}
           renderItem={({ item }) => (
             <TouchableHighlight
               onPress={this._handlePressFeelings.bind(this, item)}
             >
-              <Feeling
+              <StyledFeeling
                 {...item}
               />
             </TouchableHighlight>
           )}
         />
-        <Button
+        <Next
           disabled={!canGoNext}
           onPress={this._handlePressNext}
           title="next"
@@ -115,6 +99,24 @@ const Container = styled.SafeAreaView`
   align-items: center;
   justify-content: flex-start;
   background-color: ${({ theme: { background } }) => background};
+`
+
+const FeelingList = styled.FlatList.attrs(() => ({
+  ItemSeparatorComponent: styled.View`height: 10;`,
+}))`
+  flex: 1;
+  width: 100%;
+  padding-horizontal: 20;
+  padding-vertical: 20;
+`
+
+const StyledFeeling = styled(Feeling)`
+  height: 100;
+  flex: 1;
+`
+
+const Next = styled(Button)`
+  height: 200;
 `
 
 export default FeelingsSelection

@@ -15,13 +15,14 @@ class App extends React.Component {
   
   render() {
     const {
+      style,
       isLoading,
     } = this.props
 
     return isLoading ? (
-      <AppLoading />
+      <AppLoading style={style} />
     ) : (
-      <AppNavigator />
+      <AppNavigator style={style}/>
     )
   }
 }

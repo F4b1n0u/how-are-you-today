@@ -9,6 +9,9 @@ const Navigator = createStackNavigator(
   {
     home: {
       screen: Home,
+      navigationOptions: {
+        header: null,
+      },
     },
     insight: {
       screen: Insight,
