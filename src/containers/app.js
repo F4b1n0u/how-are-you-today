@@ -23,7 +23,7 @@ const mapStateToProps = state => ({
   isLoaded: isLoaded(state),
 })
 
-const mapDispatchToProps = (dispatch, getState) => ({
+const mapDispatchToProps = dispatch => ({
   startLoading: () => {
     dispatch(startLoad())
     dispatch(fetchCheckins())

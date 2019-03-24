@@ -2,7 +2,7 @@ import { combineReducers } from 'redux'
 export const KEY = 'feelings'
 export const NAME_SPACE = 'FEELINGS'
 
-import { ajaxGetFeelings } from '#services/json-server'
+import { getFeelings } from '#services/json-server'
 
 // State
 const initialState = {
@@ -84,7 +84,7 @@ export const fetchFailure = () => ({
 // Side effects
 export const fetch = () => (dispatch) => {
   dispatch(startFetch())
-  ajaxGetFeelings()
+  getFeelings()
     .then(data => dispatch(fetchSuccess(data)))
     .catch(error => dispatch(fetchFailure(error)))
 }

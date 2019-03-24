@@ -1,14 +1,13 @@
 
 import React from 'react'
 
-import Result from '#components/check-in/result'
+import Result from '#containers/check-in/result'
 
-import { navigate } from '#utils/navigator-service'
-
-const ResultScreen = () => (
+const ResultScreen = ({ navigation }) => (
   <Result
-    onInsight={() => navigate('insight')}
-    onBackHome={() => navigate('home')}
+    checkIn={navigation.getParam('formState')}
+    onInsight={() => navigation.navigate('insight')}
+    onBackHome={() => navigation.navigate('home')}
   />
 )
 

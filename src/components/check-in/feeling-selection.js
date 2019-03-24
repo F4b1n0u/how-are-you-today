@@ -25,8 +25,13 @@ Feeling.propTypes = {
 }
 
 class FeelingsSelection extends PureComponent {
-  state = {
-    selectedFeelingLabels: [],
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      ...props.previousFormState,
+      selectedFeelingLabels: [],
+    }
   }
 
   _handlePressFeelings = ({ label }) => {
@@ -51,12 +56,8 @@ class FeelingsSelection extends PureComponent {
     const {
       onNext,
     } = this.props
-
-    const {
-      selectedFeelingLabels,
-    } = this.state
     
-    onNext(selectedFeelingLabels)
+    onNext(this.state)
   }
 
   render() {

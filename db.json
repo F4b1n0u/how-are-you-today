@@ -5,12 +5,63 @@
     "bored",
     "happy"
   ],
-  "check-ins"  : [{
-    "timestamp": 1553344663203,
-    "mood": 5,
-    "feelings": [
-      "depressed",
-      "optimistic"
-    ]
-  }]
+  "check-ins": [
+    {
+      "id": 1553423869175,
+      "timestamp": 1553423869175,
+      "mood": 5,
+      "selectedFeelingLabels": [
+        "bored"
+      ],
+      "comment": ""
+    },
+    {
+      "id": 1553424075025,
+      "timestamp": 1553424075025,
+      "mood": 5,
+      "selectedFeelingLabels": [
+        "bored"
+      ],
+      "comment": ""
+    },
+    {
+      "id": 1553424093834,
+      "timestamp": 1553424093834,
+      "mood": 7,
+      "selectedFeelingLabels": [
+        "depressed",
+        "optimistic",
+        "bored",
+        "happy"
+      ],
+      "comment": "Hello"
+    },
+    {
+      "id": 1553424130919,
+      "timestamp": 1553424130919,
+      "mood": 5,
+      "selectedFeelingLabels": [
+        "optimistic"
+      ],
+      "comment": ""
+    },
+    {
+      "id": 1553425475962,
+      "timestamp": 1553425475962,
+      "mood": 5,
+      "selectedFeelingLabels": [
+        "optimistic"
+      ],
+      "comment": ""
+    },
+    {
+      "id": 1553425989036,
+      "timestamp": 1553425989036,
+      "mood": 5,
+      "selectedFeelingLabels": [
+        "optimistic"
+      ],
+      "comment": ""
+    }
+  ]
 }

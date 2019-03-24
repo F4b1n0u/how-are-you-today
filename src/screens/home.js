@@ -5,8 +5,8 @@ import Home from '#components/home'
 
 const HomeScreen = ({ navigation }) => (
   <Home
-    onInsightSelect={() => navigation.navigate('insight')}
-    onCheckInSelect={() => navigation.navigate('checkIn')}
+    onGoToInsight={() => navigation.navigate('insight')}
+    onGoToCheckIn={() => navigation.navigate('checkIn')}
   />
 )
 

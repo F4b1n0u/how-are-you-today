@@ -21,12 +21,8 @@ class MoodSelection extends PureComponent {
     const {
       onNext,
     } = this.props
-
-    const {
-      mood,
-    } = this.state
     
-    onNext(mood)
+    onNext(this.state)
   }
 
   render() {

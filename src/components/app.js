@@ -2,7 +2,6 @@ import React from 'react';
 import { AppLoading } from 'expo'
 import PropTypes from 'prop-types'
 
-import { setTopLevelNavigator } from '#utils/navigator-service'
 import AppNavigator from '#navigators/app'
 
 class App extends React.Component {
@@ -17,17 +16,12 @@ class App extends React.Component {
   render() {
     const {
       isLoading,
-      children,
     } = this.props
 
     return isLoading ? (
       <AppLoading />
     ) : (
-      <AppNavigator
-        ref={navigatorRef => {
-          setTopLevelNavigator(navigatorRef);
-        }}
-      />
+      <AppNavigator />
     )
   }
 }

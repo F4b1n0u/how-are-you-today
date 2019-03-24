@@ -6,17 +6,26 @@ import {
 
 const URI = `${API_HOST}:${API_PORT}`
 
-export const ajaxGetFeelings = () => axios
+export const getFeelings = () => axios
   .get(`${URI}/feelings`)
   .then(({ data }) => data)
-  .catch(error => error)
 
-export const ajaxGetCheckIns = () => axios
+export const getCheckIns = () => axios
   .get(`${URI}/check-ins`)
   .then(({ data }) => data)
-  .catch(error => error)
 
-export const ajaxPutCheckIn = (checkIn) => axios
-  .put(`${URI}/check-ins`, checkIn)
-  .then(({ data }) => data)
-  .catch(error => error)
+export const putCheckIn = (checkIn) => {
+  const now = Date.now()
+  const data = {
+    id: now,
+    timestamp: now,
+    ...checkIn,
+  }
+
+  return axios
+    .post(
+      `${URI}/check-ins`,
+      data
+    )
+    .then(({ data }) => data)
+}

@@ -7,7 +7,8 @@ const FeelingsSelectionScreen = ({
    navigation,
 }) => (
   <FeelingSelection 
-    onNext={params => navigation.navigate('comment', params)}
+    previousFormState={navigation.getParam('formState')}
+    onNext={formState => navigation.navigate('comment', { formState })}
   />
 )
 

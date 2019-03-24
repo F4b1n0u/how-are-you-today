@@ -80,7 +80,6 @@ export const endLoadFailure = () => ({
 
 // Side effects
 
-
 // Selectors
 export const isLoading = state => state[KEY].status.isPending
 export const isLoaded = state => state[KEY].isLoaded

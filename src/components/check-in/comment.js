@@ -1,14 +1,19 @@
 
 import React, { PureComponent } from 'react'
-import { StyleSheet, View, Button, TextInput } from 'react-native'
-import { Constants } from 'expo'
+import { Button, TextInput } from 'react-native'
 import PropTypes from 'prop-types'
+import styled from 'styled-components/native'
 
 class Comment extends PureComponent {
-  state = {
-    comment: ''
-  }
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      ...props.previousFormState,
+      comment: ''
+    }
+  }
+  
   _handleCommentChange = (comment) => {
     this.setState({
       comment,
@@ -20,12 +25,8 @@ class Comment extends PureComponent {
     const {
       onNext,
     } = this.props
-
-    const {
-      comment,
-    } = this.state
     
-    onNext(comment)
+    onNext(this.state)
   }
 
   render() {
@@ -38,7 +39,7 @@ class Comment extends PureComponent {
     } = this.state
 
     return (
-      <View style={styles.container}>
+      <Container>
         <TextInput
           multiline={true}
           numberOfLines={4}
@@ -50,7 +51,7 @@ class Comment extends PureComponent {
           onPress={this._handlePressNext}
           title="submit"
         />
-      </View>
+      </Container>
     )
   }
 }
@@ -62,18 +63,11 @@ Comment.propTypes = {
   onNext: PropTypes.func.isRequired,
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: Constants.statusBarHeight,
-  },
-  text: {
-    color: '#000000',
-    fontSize: 70,
-  },
-});
+const Container = styled.View`
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`
 
 export default Comment

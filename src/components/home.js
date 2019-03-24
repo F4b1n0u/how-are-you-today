@@ -1,45 +1,38 @@
 
 import React from 'react'
-import { StyleSheet, View, Button } from 'react-native'
-import { Constants } from 'expo'
+import { Button } from 'react-native'
 import PropTypes from 'prop-types'
+import styled from 'styled-components/native'
 
 const Home = ({
-  onInsightSelect,
-  onCheckInSelect,
+  onGoToInsight,
+  onGoToCheckIn,
 }) => (
-  <View style={styles.container}>
+  <Container>
     <Button
-      onPress={onCheckInSelect}
+      onPress={onGoToCheckIn}
       title="Check In"
     />
     <Button
-      onPress={onInsightSelect}
+      onPress={onGoToInsight}
       title="Insight"
     />
-  </View>
+  </Container>
 )
 
 Home.defaultProps = {
 }
 
 Home.propTypes = {
-  onInsightSelect: PropTypes.func.isRequired,
-  onCheckInSelect: PropTypes.func.isRequired,
+  onGoToInsight: PropTypes.func.isRequired,
+  onGoToCheckIn: PropTypes.func.isRequired,
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    paddingTop: Constants.statusBarHeight,
-  },
-  text: {
-    color: '#000000',
-    fontSize: 70,
-  },
-});
+const Container = styled.View`
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`
 
 export default Home
