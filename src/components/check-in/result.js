@@ -44,15 +44,6 @@ class Result extends PureComponent {
             title="failed !!!!, try again"
           />
         )}
-        
-        <Button
-          onPress={onInsight}
-          title="insight"
-        />
-        <Button
-          onPress={onBackHome}
-          title="home"
-        />
       </Container>
     )
   }
@@ -72,11 +63,12 @@ Result.propTypes = {
   onInsight: PropTypes.func.isRequired,
 }
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-color: ${({ theme: { background } }) => background};
 `
 
 export default Result

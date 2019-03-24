@@ -32,6 +32,9 @@ class MoodSelection extends PureComponent {
 
     return (
       <Container>
+        <Mood>
+          {mood}
+        </Mood>
         <Slider
           minimumValue={1}
           maximumValue={7}
@@ -39,7 +42,6 @@ class MoodSelection extends PureComponent {
           value={mood}
           onValueChange={this._handleMoodChange}
         />
-        <Text>{mood}</Text>
         <Button
           onPress={this._handlePressNext}
           title="Next"
@@ -56,12 +58,17 @@ MoodSelection.propTypes = {
   onNext: PropTypes.func.isRequired,
 }
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: ${Constants.statusBarHeight};
+  background-color: ${({ theme: { background } }) => background};
+`
+
+const Mood = styled.Text`
+  font-family: moods;
+  font-size: 200;
 `
 
 export default MoodSelection

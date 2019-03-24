@@ -1,10 +1,12 @@
-
 import React from 'react'
+import styled from 'styled-components/native'
 
-import Insight from '#components/insight'
+import Insight from '#containers/insight'
 
-const InsightScreen = () => (
-  <Insight/>
+const InsightScreen = ({ navigation }) => (
+  <Insight
+    onGoToCheckIn={() => navigation.navigate('checkIn')}
+  />
 )
 
 InsightScreen.navigationOptions = {

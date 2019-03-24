@@ -17,6 +17,7 @@ module.exports = (api) => {
         'module-resolver', {
           root: ['./src'],
           alias: {
+            '#assets': './assets',
             '#actions': './src/actions',
             '#components': './src/components',
             '#containers': './src/containers',
@@ -27,7 +28,6 @@ module.exports = (api) => {
             '#utils': './src/utils',
             '#screens': './src/screens',
             '#navigators': './src/navigators',
-            '#env': './.env.js',
           },
         },
       ]

@@ -30,24 +30,24 @@ class FeelingsSelection extends PureComponent {
 
     this.state = {
       ...props.previousFormState,
-      selectedFeelingLabels: [],
+      feelings: [],
     }
   }
 
   _handlePressFeelings = ({ label }) => {
     const {
-      selectedFeelingLabels,
+      feelings,
     } = this.state
 
-    const isSelected = selectedFeelingLabels.indexOf(label) !== -1
+    const isSelected = feelings.indexOf(label) !== -1
 
     if (isSelected) {
       this.setState({
-        selectedFeelingLabels: selectedFeelingLabels.filter(selectedFeeling => selectedFeeling !== label),
+        feelings: feelings.filter(selectedFeeling => selectedFeeling !== label),
       })
     } else {
       this.setState({
-        selectedFeelingLabels: [ ...selectedFeelingLabels, label ],
+        feelings: [ ...feelings, label ],
       })
     }
   }
@@ -62,20 +62,20 @@ class FeelingsSelection extends PureComponent {
 
   render() {
     const {
-      feelings,
+      feelings: allFeelings,
     } = this.props
 
     const {
-      selectedFeelingLabels,
+      feelings,
     } = this.state
 
-    const data = feelings.map(feeling => ({
+    const data = allFeelings.map(feeling => ({
       key: feeling,
       label: feeling,
-      isSelected: selectedFeelingLabels.indexOf(feeling) !== -1
+      isSelected: feelings.indexOf(feeling) !== -1
     }))
 
-    const canGoNext = !isEmpty(selectedFeelingLabels)
+    const canGoNext = !isEmpty(feelings)
 
     return (
       <Container>
@@ -109,12 +109,12 @@ FeelingsSelection.propTypes = {
   feelings: PropTypes.array.isRequired,
 }
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding-top: ${Constants.statusBarHeight};
+  background-color: ${({ theme: { background } }) => background};
 `
 
 export default FeelingsSelection

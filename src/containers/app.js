@@ -1,4 +1,6 @@
 import { connect } from 'react-redux'
+import { Font } from 'expo'
+import { FONTS } from '#utils/assets'
 
 import {
   startLoad,
@@ -12,10 +14,6 @@ import {
   fetch as fetchFeelings,
 } from '#modules/feelings'
 
-import {
-  fetch as fetchCheckins,
-} from '#modules/check-ins'
-
 import App from '#components/app'
 
 const mapStateToProps = state => ({
@@ -24,11 +22,15 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  startLoading: () => {
-    dispatch(startLoad())
-    dispatch(fetchCheckins())
-    dispatch(fetchFeelings())
-    dispatch(endLoad())
+  startLoading: async () => {
+    await dispatch(startLoad())
+    await Promise.all([
+      Font.loadAsync({
+        moods: FONTS.moods
+      }),
+    ])
+    await dispatch(fetchFeelings())
+    await dispatch(endLoad())
   },
 })
 

@@ -5,10 +5,11 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 
 const Home = ({
+  style,
   onGoToInsight,
   onGoToCheckIn,
 }) => (
-  <Container>
+  <Container style={style}>
     <Button
       onPress={onGoToCheckIn}
       title="Check In"
@@ -28,11 +29,12 @@ Home.propTypes = {
   onGoToCheckIn: PropTypes.func.isRequired,
 }
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-color: ${({ theme: { background } }) => background};
 `
 
 export default Home

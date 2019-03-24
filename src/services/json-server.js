@@ -2,7 +2,7 @@ import axios from 'axios'
 import {
   API_HOST,
   API_PORT,
-} from '#env'
+} from './../../env'
 
 const URI = `${API_HOST}:${API_PORT}`
 

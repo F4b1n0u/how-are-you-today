@@ -82,9 +82,9 @@ export const fetchFailure = () => ({
 })
 
 // Side effects
-export const fetch = () => (dispatch) => {
-  dispatch(startFetch())
-  getFeelings()
+export const fetch = () => async (dispatch) => {
+  await dispatch(startFetch())
+  await getFeelings()
     .then(data => dispatch(fetchSuccess(data)))
     .catch(error => dispatch(fetchFailure(error)))
 }

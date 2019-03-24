@@ -63,11 +63,12 @@ Comment.propTypes = {
   onNext: PropTypes.func.isRequired,
 }
 
-const Container = styled.View`
+const Container = styled.SafeAreaView`
   flex: 1;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-color: ${({ theme: { background } }) => background};
 `
 
 export default Comment

@@ -1,11 +1,13 @@
 import React from 'react'
 import { registerRootComponent } from 'expo'
 import { Provider } from 'react-redux'
-import styled from 'styled-components/native'
+import styled, { ThemeProvider } from 'styled-components'
 import { StatusBar } from 'react-native'
+
 
 import storeConfigure from '#store/index'
 import App from '#containers/app'
+import theme from '#utils/theme'
 
 StatusBar.setHidden(true)
 
@@ -22,6 +24,8 @@ registerRootComponent(() => (
   <Provider
     store={store}
   >
-    <StyledApp />
+    <ThemeProvider theme={theme}>
+      <StyledApp/>
+    </ThemeProvider>
   </Provider>
 ))
