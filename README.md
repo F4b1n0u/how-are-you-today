@@ -18,7 +18,7 @@ I did my best to provide you with an up and running process, but to be fair, eve
 #### Client
 - `npm install -g expo-cli`
 - `npm install` on the root of the project
-- Update the `env.json` file with IP address of your server
+- Update the `env.js` file with IP address of your server
 - (optional) install expo on your mobile device if you want to test on a real phone
 
 ### Launch the app
