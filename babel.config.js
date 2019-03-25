@@ -4,7 +4,6 @@ module.exports = (api) => {
   return {
     presets: [
       'babel-preset-expo',
-      '@babel/preset-env',
     ],
 
     env: {
