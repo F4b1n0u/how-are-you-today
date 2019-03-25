@@ -23,8 +23,7 @@ I did my best to provide you with an up and running process, but to be fair, eve
 
 ### Launch the app
 #### Server
-- `json-server --watch db.json --host YOUR_IP --delay 1000`, feel free to change the delay to see how the app will behave ;)
-- `npm start`
+- `json-server --watch PATH_OF_YOUR_DB_JSON_FILE --host YOUR_IP --delay 1000`, feel free to change the delay to see how the app will behave ;)
 
 #### Client
 - `npm test`, to be honest they are not real production-like tests ! but just to show off a bit :)
