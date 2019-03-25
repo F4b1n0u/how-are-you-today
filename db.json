@@ -9,9 +9,18 @@
     "Content",
     "Interested",
     "Proud",
-    "Anxious",
-    "Angry"
+    "Anxious"
   ],
   "check-ins": [
+    {
+      "id": 1553507087988,
+      "timestamp": 1553507087988,
+      "mood": 5,
+      "feelings": [
+        "Interested",
+        "Excited"
+      ],
+      "comment": "Plop"
+    }
   ]
 }
