@@ -1,7 +1,7 @@
-import Color from 'color'
-
 export default {
-  background: '#EAEAEA',
-  box: '#FFFFFF',
-  highlight: '#19A5B0',
+  background: '#FFFFFF',
+  link: '#C4C7CA',
+  text: '#000000',
+  quote: '#E97D00',
+  button: '#E97D00',
 }

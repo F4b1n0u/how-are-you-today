@@ -4,17 +4,17 @@ import appReducer, {
   KEY as APP_KEY,
 } from '#modules/app'
 
-import checkInsReducer, {
-  KEY as CHECK_INS_KEY,
-} from '#modules/check-ins'
+import userReducer, {
+  KEY as USER_KEY,
+} from '#modules/user'
 
-import feelingsReducer, {
-  KEY as FEELINGS_KEY,
-} from '#modules/feelings'
+import todayQuoteReducer, {
+  KEY as TODAY_QUOTE_KEY,
+} from '#modules/today-quote'
 
 // Reducers
 export default combineReducers({
   [APP_KEY]: appReducer,
-  [CHECK_INS_KEY]: checkInsReducer,
-  [FEELINGS_KEY]: feelingsReducer,
+  [USER_KEY]: userReducer,
+  [TODAY_QUOTE_KEY]: todayQuoteReducer,
 })

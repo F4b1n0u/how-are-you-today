@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import styled, { ThemeProvider } from 'styled-components/native'
 import { StatusBar } from 'react-native'
 
-
 import storeConfigure from '#store/index'
 import App from '#containers/app'
 import theme from '#utils/theme'

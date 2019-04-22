@@ -1,35 +1,47 @@
 import { connect } from 'react-redux'
-import { Font } from 'expo'
-import { FONTS } from '#utils/assets'
+import { Asset, Font } from 'expo'
 
 import {
   startLoad,
   endLoad,
-
   isLoaded,
-  isLoading,
 } from '#modules/app'
 
 import {
-  fetch as fetchFeelings,
-} from '#modules/feelings'
+  isIntroduced,
+  verifyIntroduction,
+} from '#modules/user'
+
+import {
+  retrieve as retrieveTodayQuote,
+} from '#modules/today-quote'
+
+import {
+  IMAGES,
+  FONTS,
+} from '#utils/assets'
 
 import App from '#components/app'
 
 const mapStateToProps = state => ({
-  isLoading: isLoading(state),
   isLoaded: isLoaded(state),
+  isIntroduced: isIntroduced(state),
 })
 
 const mapDispatchToProps = dispatch => ({
   startLoading: async () => {
     await dispatch(startLoad())
     await Promise.all([
+      Asset.loadAsync([,
+        IMAGES.logo,
+      ]),
       Font.loadAsync({
-        moods: FONTS.moods
-      }),
+        'chivo': FONTS.chivo,
+        'amatic': FONTS.amatic,
+      })
     ])
-    await dispatch(fetchFeelings())
+    await dispatch(verifyIntroduction())
+    await dispatch(retrieveTodayQuote())
     await dispatch(endLoad())
   },
 })

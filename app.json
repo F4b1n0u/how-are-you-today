@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "How Are You Today ?",
-    "slug": "how-are-you-today",
+    "name": "Quotation",
+    "slug": "quotation",
     "privacy": "public",
     "sdkVersion": "32.0.0",
     "platforms": [
@@ -14,7 +14,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#EAEAEA"
+      "backgroundColor": "#FFFFFF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -23,7 +23,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     }
   }
 }
