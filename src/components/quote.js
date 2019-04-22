@@ -144,16 +144,16 @@ const StyledText = styled.Text`
 `
 
 const Details = styled(StyledText)`
-  font-size: ${({ format }) => RF(5 * format.scale || 1)};
+  font-size: ${({ format }) => RF(5 * (format && format.scale || 1))};
   margin-left: 20;
   margin-right: 20;
   font-family: 'amatic';
-  letter-spacing: ${({ format }) => format.letterSpacing || 5};
+  letter-spacing: ${({ format }) => (format && format.letterSpacing || 5)};
 `
 
 const Author = styled(StyledText)`
   margin-top: 40;
-  font-size: ${({ format }) => RF(3.5 * format.scale || 1)};
+  font-size: ${({ format }) => RF(3.5 * (format && format.scale || 1))};
   font-family: 'chivo';
 `
 
